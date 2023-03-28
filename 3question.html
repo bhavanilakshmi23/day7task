@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>day4</title>
+    </head>
+
+    <body>
+        <script>
+           let xhr = new XMLHttpRequest();
+           xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
+            xhr.onload = function () {
+                let response = JSON.parse(xhr.responseText);
+                for(let index=0; index<response.length; index++){
+                    console.log(response[index].population);
+                }
+                let population1=population.reduce((previousvalue,currentvalue)=>
+                {
+                    console.log(previousvalue,currentvalue);
+                    return previousvalue+currentvalue;
+                });
+                console.log(population1);
+            };
+            xhr.send();
+        </script>
+    </body>
+</html>
+
+
+

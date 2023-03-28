@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tasks</title>
+</head>
+
+<body>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
+         xhr.onload = function () {
+            let array = JSON.parse(xhr.responseText);
+             console.log(array.filter((value) => value.continents.includes('Asia')).map((value) => value.name.common));
+             console.log(array);
+        };
+        xhr.send();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tasks</title>
+</head>
+
+<body>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
+         xhr.onload = function () {
+            let array = JSON.parse(xhr.responseText);
+             console.log(array.map((value) => value.name.common));
+             console.log(array);
+             for(index=0;index<=index.length;index++){
+                if(index<200000)
+                {
+                    console.log(response[index].population)
+                }else
+                {
+                    console.log(response[index].name.common)
+                }
+             }
+        };
+        xhr.send();
+    </script>
+</body>
+
+</html>
